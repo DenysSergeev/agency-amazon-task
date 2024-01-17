@@ -40,7 +40,7 @@ const CampaignsTable: React.FC<CampaignsTableProps> = ({
     const navigate = useNavigate()
 
     const handleChangePage = (
-        _event: any,
+        _event: React.MouseEvent<HTMLButtonElement, MouseEvent> | null,
         newPage: React.SetStateAction<number>
     ) => {
         setPage(newPage)

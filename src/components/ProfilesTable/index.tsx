@@ -39,7 +39,7 @@ const ProfilesTable: React.FC<ProfilesTableProps> = ({
     const navigate = useNavigate()
 
     const handleChangePage = (
-        _event: any,
+        _event: React.MouseEvent<HTMLButtonElement, MouseEvent> | null,
         newPage: React.SetStateAction<number>
     ) => {
         setPage(newPage)

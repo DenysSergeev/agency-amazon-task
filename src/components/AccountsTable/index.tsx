@@ -22,13 +22,11 @@ interface Account {
 
 interface AccountsTableProps {
     data: Account[]
-    // onRowClick: (accountId: string) => void
     selectedAccountId: string | null
 }
 
 const AccountsTable: React.FC<AccountsTableProps> = ({
     data,
-    // onRowClick,
     selectedAccountId,
 }) => {
     const [page, setPage] = useState(0)
@@ -41,7 +39,10 @@ const AccountsTable: React.FC<AccountsTableProps> = ({
 
     const navigate = useNavigate()
 
-    const handleChangePage = (_event: any, newPage: React.SetStateAction<number>) => {
+    const handleChangePage = (
+        _event: React.MouseEvent<HTMLButtonElement, MouseEvent> | null,
+        newPage: React.SetStateAction<number>
+    ) => {
         setPage(newPage)
     }
 
